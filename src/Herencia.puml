@@ -1,0 +1,10 @@
+@startuml
+actor Agente
+usecase "Enviar solicitu de crédito" as base
+usecase "Enviar solicitu de crédito personal" as 1
+usecase "Enviar solicitu de crédito empresarial" as 2
+Agente --> base
+base <|-- 1
+base <|-- 2
+
+@enduml

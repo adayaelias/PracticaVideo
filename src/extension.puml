@@ -1,0 +1,13 @@
+@startuml
+actor Agente as a
+usecase "Evaluar solicitud de crédito" as 1
+usecase "Solicitar información adicional al cliente" as 2
+note "ingresos > 1000" as n1
+
+a --> 1
+2 ..> 1 : <<extend>>
+
+
+
+
+@enduml

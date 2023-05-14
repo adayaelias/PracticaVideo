@@ -1,0 +1,8 @@
+@startuml
+actor Bibliotecario
+usecase "Baja socio" as 1
+usecase "Buscar socio" as 2
+
+Bibliotecario -- 1
+1 ..> 2 : <<include>>
+@enduml

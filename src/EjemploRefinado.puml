@@ -1,0 +1,39 @@
+@startuml
+left to right direction
+actor Empleado as e
+actor Administrador as a
+rectangle "Empresa de pedidos"{
+    usecase "Introducir pedido" as int
+    usecase "Cancelar pedido " as cp
+    usecase "Obtener estado del pedido" as estate
+    usecase "Borrar pedidos" as borrar
+    usecase "Buscar pedidos" as bp
+    usecase "Alta cliente" as alta
+    usecase "Buscar cliente" as bc
+
+    usecase "Nuevo producto" as new
+    usecase "Borrar producto" as bprod
+
+    usecase "pago con tarjerta" as pt
+    usecase "pago en cuenta" as pc
+}
+
+e -- int
+e -- cp
+e -- estate
+e -- borrar
+e -- bp
+e -- alta
+
+
+a -- new
+a -- bprod
+
+int <.. alta : <<extend>>
+int <.. pt : <<extend>>
+int <.. pc : <<extend>>
+bc <.. int : <<include>>
+estate ..> bp : <<include>>
+cp ..> bp : <<include>>
+
+@enduml

@@ -1,0 +1,18 @@
+@startuml
+left to right direction
+rectangle Biblioteca{
+    usecase "Reservar libro" as rl
+    usecase "Prestar libro" as pl
+    usecase "Devolver libro" as dl
+    usecase "Actualizar catálogo" as ac
+    }
+actor Socio as s
+actor Bibliotecario as b
+s -- rl
+s -- pl
+s -- dl
+
+b --pl
+b -- ac
+
+@enduml
